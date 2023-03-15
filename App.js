@@ -26,8 +26,12 @@ const voiceButtonText = (text === '' && !isRecord) ?
     'Press Stop Button' : 'Press Start Button'
 
 // const v = (text === '' && !isRecord) ? 'a':(text === '' && isRecord) ?'b':(text !== '' && isRecord) ?'c ': 'd'
+Tts.setDefaultLanguage('fr-FR');
 const yu = () => {
-  const uu = (text1 === 1) ? 'ok':(text1 === 2) ?'problem': 'ok'
+  const uu = (text1 === 1) ? 'mon nom est diarra jamila':
+  (text1 === 2) ?'je suis la responssable rh de la boite': 
+  (text1 === 3) ?'désoler, je ne peux pas vous aider': 
+  (text1 === 4) ?'merci et bonne journée a vous':'ok'
   setTextt(uu)
   console.log("okkkkkkkk...........", textt)
 }  
@@ -39,6 +43,7 @@ const yu = () => {
   const speak = async () => {
     const result = await textt
     Tts.speak(result);
+    setText1(text1 + 1)
   }
 
 const onSpeechStart = (event) => {
@@ -65,7 +70,7 @@ const onRecordVoice = () => {
       setModalVisible(!modalVisible);
     } else {
       
-      Voice.start('en-US'); // languages code e.g 'en-US'
+      Voice.start('fr-FR'); // languages code e.g 'en-US'
     }
     setIsRecord(!isRecord);
   };
@@ -90,7 +95,7 @@ useEffect(() => {
 return () => {
       Voice.destroy().then(Voice.removeAllListeners);
     };
-  }, [textt]);
+  }, [textt, text1]);
 
   return (
        <View style={{flex: 1, alignItems: 'center', backgroundColor:'#ffff',justifyContent: 'center'}}>

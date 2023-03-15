@@ -23,6 +23,8 @@ target 'AwesomeProject' do
 
   pod 'TextToSpeech', :path => '../node_modules/react-native-tts'
 
+  pod 'RNSoundPlayer', :path => '../node_modules/react-native-sound-player'
+
   target 'AwesomeProjectTests' do
     inherit! :complete
     # Pods for testing

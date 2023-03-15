@@ -13,6 +13,7 @@
     "@react-native-community/voice": "^1.1.9",
     "react": "17.0.2",
     "react-native": "0.68.0",
+    "react-native-sound-player": "^0.13.2",
     "react-native-tts": "^4.1.0"
   },
   "devDependencies": {
